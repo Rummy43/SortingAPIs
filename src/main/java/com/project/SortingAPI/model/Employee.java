@@ -1,10 +1,13 @@
 package com.project.SortingAPI.model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 @Entity
 public class Employee {
-
+	@Id
+	@GeneratedValue
 	private long id;
 	private String name;
 	private int age;
@@ -12,6 +15,13 @@ public class Employee {
 	public Employee() {
 		super();
 	}
+	public Employee(String name, int age, String dept) {
+		super();
+		this.name = name;
+		this.age = age;
+		this.dept = dept;
+	}
+	
 	public Employee(long id, String name, int age, String dept) {
 		super();
 		this.id = id;
